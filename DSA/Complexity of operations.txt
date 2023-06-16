@@ -1,0 +1,7 @@
+If N = Maximum number of bits in a & bits
+
+=>  a+b = O(N)
+=>  a-b = O(N)
+=>  a*b = O(N^2)
+=>  a/b = O(N^2)
+=>  a%b = O(N^2)
