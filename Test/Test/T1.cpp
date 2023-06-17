@@ -10,71 +10,49 @@ using namespace std;
  
 class sol {
 public:
+    vector<vector<string>> res;
+    vector<string> path;
+    vector<vector<string>> partition(string s) {
+        fun(0,s);
+        return res;
+    }
 
-    bool solve(vector<vector<char>> &board)
+    void fun(int index,string s)
     {
-        for(int i=0;i<board.size();i++)
+        if(index==s.size())
         {
-            for(int j=0;j<board[0].size();j++)
+            res.push_back(path);
+        }
+        for(int i=index;i<s.size();i++)
+        {
+            if(ispal(s,index,i))
             {
-                if(board[i][j]=='.')
-                {
-                    for(char c='1';c<='9';c++)
-                    {
-                        if(isvalid(board,i,j,c))
-                        {
-                            board[i][j]=c;
-                            if(solve(board)==true)
-                            return true;
-                            else
-                            board[i][j]='.';
-                        }
-                    }
-                    return false;
-                }
+                path.push_back(s.substr(index,i-index+1));
+                fun(i+1,s);
+                path.pop_back();
             }
         }
-        return true;
     }
-    
-    bool isvalid(vector<vector<char>> &board,int row,int col,char c)
+    bool ispal(string s,int start,int end)
     {
-        for(int i=0;i<9;i++)
+        while(start<=end)
         {
-            if(board[i][col]==c)
-            return false;
-            if(board[row][i]==c)
-            return false;
-            if(board[3*(row/3)+i/3][3*(col/3)+i%3]==c)
+            if(s[start++]!=s[end--])
             return false;
         }
         return true;
-    }
-
-    void solveSudoku(vector<vector<char>>& board) {
-        solve(board);
     }
 };
 
 int main()
 {
+    string s="aabb";
     sol a;
-    vector<vector<char>> board{
-        {'5','3','.','.','7','.','.','.','.'},
-        {'6','.','.','1','9','5','.','.','.'},
-        {'.','9','8','.','.','.','.','6','.'},
-        {'8','.','.','.','6','.','.','.','3'},
-        {'4','.','.','8','.','3','.','.','1'},
-        {'7','.','.','.','2','.','.','.','6'},
-        {'.','6','.','.','.','.','2','8','.'},
-        {'.','.','.','4','1','9','.','.','5'},
-        {'.','.','.','.','8','.','.','7','9'}
-      };
-    a.solveSudoku(board);
-    for(int i=0;i<9;i++)
+    vector<vector<string>> res = a.partition(s);
+    for(int i=0;i<res.size();i++)
     {
-        for(int j=0;j<9;j++)
-            cout<<board[i][j]<<" ";
+        for(int j=0;j<res[i].size();j++)
+            cout<<res[i][j]<<" ";
         cout<<endl;
     }
 }
