@@ -17,6 +17,7 @@ int main()
     int n, k;
     cout << "Enter the size of array : ";
     cin >> n;
+
     for (int i = 1; i <= n; i++)
     {
         v.push_back(i);
@@ -43,3 +44,5 @@ int main()
     cout << endl
          << v.max_size() << endl;
 }
+
+// vsdfdsf fa fadf a a     afa
