@@ -1,13 +1,21 @@
-#include <iostream>
-#include <map>
-#include <set>
-#include <list>
-#include <vector>
-#include <algorithm>
-#include <cmath>
-using namespace std;
-int main()
+class Solution
 {
-  
-  cout<<endl
-}
+public:
+  int longestString(int x, int y, int z)
+  {
+    int ans = z * 2;
+    if (x > y)
+    {
+      ans += 2 * y + (y + 1) * 2;
+    }
+    else if (y > x)
+    {
+      ans += 2 * x + (x + 1) * 2;
+    }
+    else
+    {
+      ans += 4 * x;
+    }
+    return ans;
+  }
+};
