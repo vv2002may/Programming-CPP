@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include "bits/stdc++.h"
 using namespace std;
 // all possible subsequence for sum (no repetation)
 // void fun(int ind,vector<int> &ds,int s,int sum,int a[],int n)
