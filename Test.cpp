@@ -1,22 +1,21 @@
-#include "bits/stdc++.h"
-#define ll long long
-using namespace std;
-int main()
-{
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
-  cout.tie(NULL);
-  ll t;cin>>t;
-  while(t--)
-  {
-     int n;cin>>n;
-     string s,t,u;cin>>s>>t>>u;
-     int rot=abs(s[0]-t[0])%26;
-     for(int i=0;i<u.size();i++)
-     {
-      u[i]=(u[i]+rot)%26;
-     }
-     cout<<u;
-     cout<<endl;
-  }
-}
+int lenOfLongSubarr(int a[],  int n, int k) 
+    { 
+        int totsum=0;
+        for(int r=0;r<n;r++)
+        totsum+=a[r];
+        
+        if(totsum==k)
+        return n;
+        
+        int maxi=0;
+        for(int i=0;i<n;i++)
+        {
+            totsum-=a[i];
+            if(totsum==k)
+            {
+                maxi=n-i-1;
+                break;
+            }
+        }
+        return maxi;
+    } 
