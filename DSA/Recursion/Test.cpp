@@ -1,19 +1,15 @@
 #include "bits/stdc++.h"
+#define ll long long
 using namespace std;
 int main()
 {
-   set<int> s;
-   s.insert(3);
-   cout << s.begin();
-   // int n, p;
-   // cin >> n >> p;
-   // vector<int> a(n);
-   // for (int i = 0; i < n;i++)
-   //    cin >> a[i];
-   // vector<int> b(p);
-   // for (int i = 0; i < p;i++)
-   // {
-   //    cin >> b[i];
-   // }
-   cout << endl;
-}  
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll t;cin>>t;
+  while(t--)
+  {
+     
+     cout<<endl;
+  }
+}
