@@ -22,7 +22,6 @@ int fast_power(int a,int b)//   O(logn) : better way
 }
 int main()
 {
-system("clear");
 int num;    cin>>num;
 int pow;    cin>>pow;
 cout<<power(num,pow);

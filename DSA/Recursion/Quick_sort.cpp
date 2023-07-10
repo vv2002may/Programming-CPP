@@ -30,7 +30,6 @@ void quicksort(int a[],int s,int e)
 
 int main()
 {
-system("clear");
 int a[]={2,7,8,6,1,5,4};
 int n=sizeof(a)/sizeof(int);
 quicksort(a,0,n-1);
