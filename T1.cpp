@@ -9,7 +9,8 @@ int main()
   ll t;cin>>t;
   while(t--)
   {
-     
+     cout<<t;
+     cout<<" ";
      cout<<endl;
   }
 }
